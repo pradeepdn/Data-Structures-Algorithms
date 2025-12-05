@@ -3,7 +3,7 @@ class Solution {
         if (x == 0) return 0;
         double guess = x / 2.0;
 
-        for (int i = 0; i < 100; i++) {
+        while (Math.abs(guess*guess - x) > 1e-6){
             guess = (guess + x / guess) / 2.0;
         }
 
