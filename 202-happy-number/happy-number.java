@@ -23,7 +23,6 @@ class Solution {
             square = square + ((k % 10) * (k % 10));
             k = k / 10;
         }
-        System.out.println(square);
         return square;
     }
 }
