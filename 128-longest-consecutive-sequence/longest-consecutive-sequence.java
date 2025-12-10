@@ -7,7 +7,6 @@ class Solution {
             seq.add(nums[i]);
         }
 
-        //for (int i = 0; i < seq.size(); i++) {
         for (int num : seq) {
             int seqLen = 0;
             if (!seq.contains(num - 1)) {
