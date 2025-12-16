@@ -4,8 +4,6 @@ class Solution {
         int row = board.length;
         int col = board[0].length;
 
-        System.out.println(row);
-        System.out.println(col);
 
         int[][] life = new int[board.length][board[0].length];
         int condi = 0;
