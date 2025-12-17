@@ -2,33 +2,24 @@ class Solution {
     public List<String> summaryRanges(int[] nums) {
 
         ArrayList<String> summary = new ArrayList<>();
-        int start = 0;
-        if (nums.length == 1) {
-            summary.add(String.valueOf(nums[0]));
+
+        if (nums.length == 0) {
             return summary;
         }
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (i == 0) {
-                start = nums[i];
-            }
+        int start = nums[0];
 
-            if (nums[i + 1] != nums[i] + 1) {
-                if (start == nums[i]) {
+        for (int i = 1; i <= nums.length; i++) {
+
+            if (i == nums.length || nums[i] != nums[i - 1] + 1) {
+                if (start == nums[i - 1]) {
                     summary.add(String.valueOf(start));
-                    start = nums[i + 1];
                 } else {
-                    summary.add(start + "->" + nums[i]);
-                    start = nums[i + 1];
+                    summary.add(start + "->" + nums[i - 1]);
+                }
+                if (i < nums.length) {
+                    start = nums[i];
                 }
             }
-            if (i == nums.length - 2) {
-                if (start != nums[i + 1]) {
-                    summary.add(start + "->" + nums[i + 1]);
-                } else if (start == nums[i + 1]) {
-                    summary.add(String.valueOf(start));
-                }
-            }
-
         }
         return summary;
     }
