@@ -38,6 +38,9 @@ class Solution {
                 res += st1.pop();
             }
         }
+        if (res.length() > 1 && res.endsWith("/")) {
+            res = res.substring(0, res.length() - 1);
+        }
 
         return res;
     }
