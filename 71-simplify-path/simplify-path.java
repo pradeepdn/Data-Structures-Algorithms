@@ -2,8 +2,7 @@ class Solution {
     public String simplifyPath(String path) {
 
         Deque<String> st = new ArrayDeque<>();
-        String res = "";
-        res += "/";
+        String res = "/";
 
         for (int i = 0; i < path.length(); i++) {
 
@@ -32,11 +31,7 @@ class Solution {
             st1.push(st.pop());
         }
         while (!st1.isEmpty()) {
-            if (st1.size() != 1) {
-                res += (st1.pop() + "/");
-            } else {
-                res += st1.pop();
-            }
+            res += st1.pop() + "/";
         }
         if (res.length() > 1 && res.endsWith("/")) {
             res = res.substring(0, res.length() - 1);
