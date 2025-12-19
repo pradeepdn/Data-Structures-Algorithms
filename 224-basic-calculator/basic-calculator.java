@@ -13,6 +13,7 @@ class Solution {
                 }
                 result += sign * num;
                 i--;
+                continue;
             }
             if (c == '+') {
                 sign = +1;
@@ -26,9 +27,10 @@ class Solution {
                 result = 0;
                 sign = 1;
             }
-            if (c == ')'){
-                result = result * cal.pop();
-                result = result + cal.pop();
+            if (c == ')') {
+                int prevSign = cal.pop();
+                int prevRes = cal.pop();
+                result = prevRes + prevSign * result;
             }
         }
         return result;
