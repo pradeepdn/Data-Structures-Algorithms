@@ -49,6 +49,8 @@ class Node {
 //     }
 // }
 
+/**Optimal solution with node interleaving */
+
 class Solution {
     public Node copyRandomList(Node head) {
         if (head == null)
