@@ -24,7 +24,7 @@ class Solution {
 
         while(!queue.isEmpty()){
             int levelSize = queue.size();
-            Double sum = 0.0;
+            double sum = 0.0;
             for(int i =0 ; i<levelSize; i++){
                 TreeNode currentNode = queue.poll();
                 sum += currentNode.val;
