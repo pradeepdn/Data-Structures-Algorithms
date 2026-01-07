@@ -26,7 +26,7 @@ class Solution {
         if (root == null) {
             return 0;
         }
-        System.out.println(count++);
+        count++;
         countNodes(root.left);
         countNodes(root.right);
 
