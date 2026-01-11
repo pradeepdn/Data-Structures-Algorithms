@@ -20,16 +20,8 @@ public class Solution {
         ListNode dummyB = headB;
 
         while(dummyA != dummyB){
-            if(dummyA == null){
-                dummyA = headB;
-            }else{
-                dummyA = dummyA.next;
-            }
-            if(dummyB == null){
-                dummyB = headA;
-            }else{
-            dummyB = dummyB.next;
-            }
+            dummyA = (dummyA == null) ? headB : dummyA.next;
+            dummyB = (dummyB == null) ? headA : dummyB.next;
         }
         return dummyB;
     }
