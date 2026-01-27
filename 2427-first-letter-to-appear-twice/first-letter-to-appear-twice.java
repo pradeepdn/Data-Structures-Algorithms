@@ -6,6 +6,6 @@ class Solution {
                 return s.charAt(i);
             }
         }
-        return 'l';
+        return ' ';
     }
 }
