@@ -15,19 +15,23 @@
  */
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        String tree = serialize(root);
-        String subTree = serialize(subRoot);
-
-        return tree.contains(subTree);
+        StringBuilder sbRoot = new StringBuilder();
+        StringBuilder sbSub = new StringBuilder();
+        
+        serialize(root, sbRoot);
+        serialize(subRoot, sbSub);
+        
+        return sbRoot.toString().contains(sbSub.toString());
     }
 
-    public String serialize(TreeNode node){
-        if(node == null){
-            return ",#";
+    private void serialize(TreeNode node, StringBuilder sb) {
+        if (node == null) {
+            sb.append(",#");
+            return;
         }
-        String left = serialize(node.left);
-        String right = serialize(node.right);
-
-        return ","+node.val+left+right;
+        
+        sb.append(",").append(node.val);
+        serialize(node.left, sb);
+        serialize(node.right, sb);
     }
 }
