@@ -13,6 +13,25 @@
  *     }
  * }
  */
+// class Solution {
+//     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+//         String tree = serialize(root);
+//         String subTree = serialize(subRoot);
+
+//         return tree.contains(subTree);
+//     }
+
+//     public String serialize(TreeNode node){
+//         if(node == null){
+//             return ",#";
+//         }
+//         String left = serialize(node.left);
+//         String right = serialize(node.right);
+
+//         return ","+node.val+left+right;
+//     }
+// }
+/**Using String Builder */
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         StringBuilder sbRoot = new StringBuilder();
