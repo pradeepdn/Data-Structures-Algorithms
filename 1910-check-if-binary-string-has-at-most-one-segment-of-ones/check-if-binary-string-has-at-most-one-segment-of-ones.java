@@ -14,14 +14,20 @@
 
 //     }
 // }
+// class Solution {
+//     public boolean checkOnesSegment(String s) {
+//         for (int i = 1; i < s.length(); i++) {
+//             // We found a '1' that follows a '0'
+//             if (s.charAt(i) == '1' && s.charAt(i - 1) == '0') {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// }
 class Solution {
     public boolean checkOnesSegment(String s) {
-        for (int i = 1; i < s.length(); i++) {
-            // We found a '1' that follows a '0'
-            if (s.charAt(i) == '1' && s.charAt(i - 1) == '0') {
-                return false;
-            }
-        }
-        return true;
+        // If "01" is in the string, a new segment of ones started after a zero.
+        return !s.contains("01");
     }
 }
