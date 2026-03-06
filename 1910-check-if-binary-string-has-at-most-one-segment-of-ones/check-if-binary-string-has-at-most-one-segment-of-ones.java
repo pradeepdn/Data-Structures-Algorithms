@@ -1,19 +1,19 @@
-// class Solution {
-//     public boolean checkOnesSegment(String s) {
-//         int i = 0;
-//         while (i < s.length()) {
-//             while (i < s.length() && s.charAt(i) - '0' == 0) {
-//                 i++;
-//                 if (i < s.length() && s.charAt(i) - '0' == 1) {
-//                     return false;
-//                 }
-//             }
-//             i++;
-//         }
-//         return true;
+class Solution {
+    public boolean checkOnesSegment(String s) {
+        int i = 0;
+        while (i < s.length()) {
+            while (i < s.length() && s.charAt(i) - '0' == 0) {
+                i++;
+                if (i < s.length() && s.charAt(i) - '0' == 1) {
+                    return false;
+                }
+            }
+            i++;
+        }
+        return true;
 
-//     }
-// }
+    }
+}
 // class Solution {
 //     public boolean checkOnesSegment(String s) {
 //         for (int i = 1; i < s.length(); i++) {
@@ -25,9 +25,9 @@
 //         return true;
 //     }
 // }
-class Solution {
-    public boolean checkOnesSegment(String s) {
-        // If "01" is in the string, a new segment of ones started after a zero.
-        return !s.contains("01");
-    }
-}
+// class Solution {
+//     public boolean checkOnesSegment(String s) {
+//         // If "01" is in the string, a new segment of ones started after a zero.
+//         return !s.contains("01");
+//     }
+// }
