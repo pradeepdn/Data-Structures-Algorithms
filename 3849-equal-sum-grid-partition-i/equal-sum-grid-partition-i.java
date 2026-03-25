@@ -12,17 +12,18 @@ class Solution {
                 sum += grid[i][j];
             }
         }
-        if (sum % 2 != 0) return false;
+        if (sum % 2 != 0)
+            return false;
         long target = sum / 2;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n - 1; i++) {
             sum -= vertical[i];
             if (sum == target) {
                 return true;
             }
-            
+
         }
         sum = target * 2;
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < m - 1; i++) {
             sum -= horizontal[i];
             if (sum == target) {
                 return true;
